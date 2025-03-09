@@ -38,12 +38,12 @@ const { Content } = await render(post);
 
     <article>
       <header class="mb-8">
-        <h1 class="text-3xl font-bold mb-2 text-black dark:text-white">{post.data.title}</h1>
+        <h1 class="text-3xl font-bold mb-2">{post.data.title}</h1>
 
         <time class="text-sm text-gray-500 dark:text-gray-400">{new Date(post.data.pubDate).toLocaleDateString()}</time>
       </header>
 
-      <div class="prose dark:prose-invert max-w-none text-black dark:text-white">
+      <div class="prose dark:prose-invert max-w-none">
         <Content />
       </div>
     </article>
