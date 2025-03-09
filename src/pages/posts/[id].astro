@@ -1,0 +1,51 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("posts");
+
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout title={post.data.title}>
+  <main class="max-w-2xl mx-auto px-4 py-12">
+    <a href="/" class="text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 inline-flex items-center mb-8">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="mr-2"
+      >
+        <path d="m12 19-7-7 7-7"></path>
+        <path d="M19 12H5"></path>
+      </svg>
+      Back to home
+    </a>
+
+    <article>
+      <header class="mb-8">
+        <h1 class="text-3xl font-bold mb-2 text-black dark:text-white">{post.data.title}</h1>
+
+        <time class="text-sm text-gray-500 dark:text-gray-400">{new Date(post.data.pubDate).toLocaleDateString()}</time>
+      </header>
+
+      <div class="prose dark:prose-invert max-w-none text-black dark:text-white">
+        <Content />
+      </div>
+    </article>
+  </main>
+</Layout>

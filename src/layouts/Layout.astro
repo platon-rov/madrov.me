@@ -1,22 +1,31 @@
+---
+import { ViewTransitions } from "astro:transitions";
+import ThemeSwitcher from "../components/ThemeSwitcher.astro";
+
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { title, description = "Thoughts on philosophy, minimalism, and the pursuit of wisdom in everyday life." } = Astro.props;
+---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <title>{(title ? title + " | " : "") + "Platon's Blog"}</title>
+    <ViewTransitions />
+  </head>
+  <body class="bg-white dark:bg-black">
+    <ThemeSwitcher />
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+    <slot />
+  </body>
+</html>
