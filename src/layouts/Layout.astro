@@ -1,5 +1,5 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import ThemeSwitcher from "../components/ThemeSwitcher.astro";
 
 import "../styles/global.css";
@@ -21,7 +21,7 @@ const { title, description = "Thoughts on philosophy, minimalism, and the pursui
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{(title ? title + " | " : "") + "Platon's Blog"}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="bg-white dark:bg-black">
     <ThemeSwitcher />
