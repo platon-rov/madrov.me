@@ -4,13 +4,13 @@ description: Vague terms in determined world
 pubDate: "2025-03-09"
 ---
 
-The longer I have been programming, the more problems I have with "shared" stuff. Even though I work with more and more experienced programmers who have really deep knowledge and create amazing stuff. So maybe the problem is not me or them?
+The longer I have been programming, the more problems I have with "shared" stuff. Even though I work with more and more experienced programmers who have really deep knowledge and create amazing stuff. So maybe the problem is not with me or them?
 
 Have you ever wondered what "shared" really means? Could we name concrete boundaries under which we consider something to be shared? Could we guarantee that those boundaries would be respected?
 
-If I take a step back, I can see that "shared" is a vague term whose meaning is almost impossible to define and whose boundaries are impossible to define even within a single project, let alone commonalities between projects.
+If I take a step back, I can see that "shared" is a vague term whose meaning is almost impossible to define and whose boundaries are impossible to set even within a single project, let alone commonalities between projects.
 
-And where we don't have boundaries, we have windows for complexity growth that translate into support costs. We, humans, produce complexity, not computers, so we have to limit our ambitions by implementing strict boundaries at the code level so that the computer can help us.
+And where we don't have boundaries, we have windows for complexity growth that translate into support costs. We, humans, produce complexity, not computers, so we have to limit our ambitions by implementing strict boundaries at the code level so that the computer can help us not to break them.
 
 So I came to a very bold conclusion.
 
@@ -50,7 +50,7 @@ I'm not saying don't split your code. I'm just saying that "base" is also a vagu
 
 Again, the solution is simple. Abandon the idea of a "base" layer altogether.
 
-Start with a single default layer. Once you recognize the need for a different layers, you can create a concrete layers on top of it.
+Start with a single default layer. Once you recognize the need for a different layers, you can create them on top of it and name them more concretely.
 
 ```jsx
 class Button { ... }
