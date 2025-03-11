@@ -1,6 +1,6 @@
 ---
 title: "Shared should be gone"
-description: Vague terms in determined world
+description: There is no place for vague terms in determined world of programming
 pubDate: "2025-03-09"
 ---
 
