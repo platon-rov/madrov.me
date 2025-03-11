@@ -5,7 +5,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://platon-rov.github.io",
+  site: "https://madrov.me",
   vite: {
     plugins: [tailwindcss()],
   },
