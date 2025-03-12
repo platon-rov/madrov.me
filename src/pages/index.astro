@@ -1,16 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import { home } from "./constants";
 
 const posts = await getCollection("posts");
+
+const ogUrl = new URL(Astro.url.pathname, Astro.site);
+const ogImage = new URL("/open-graph/home", Astro.site);
 ---
 
-<Layout>
+<Layout title={home.title} description={home.description} image={ogImage.toString()} url={ogUrl.toString()}>
   <main class="max-w-2xl mx-auto px-4 py-12">
     <header class="mb-12">
-      <h1 class="text-3xl font-bold mb-2">Platon Rov</h1>
+      <h1 class="text-3xl font-bold mb-2">{home.title}</h1>
 
-      <p>Opinionated thoughts.</p>
+      <p class="text-gray-500 dark:text-gray-400">{home.description}</p>
     </header>
 
     <section>
