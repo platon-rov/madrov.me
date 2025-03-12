@@ -16,7 +16,7 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 
 const ogUrl = new URL(Astro.url.pathname, Astro.site);
-const ogImage = new URL("/open-graph/" + post.id, Astro.site);
+const ogImage = new URL("/open-graph/" + post.id + ".png", Astro.site);
 ---
 
 <Layout title={post.data.title} description={post.data.description} image={ogImage.toString()} url={ogUrl.toString()}>

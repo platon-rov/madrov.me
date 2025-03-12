@@ -7,7 +7,7 @@ import Header from "../components/Header.astro";
 const posts = await getCollection("posts");
 
 const ogUrl = new URL(Astro.url.pathname, Astro.site);
-const ogImage = new URL("/open-graph/home", Astro.site);
+const ogImage = new URL("/open-graph/home.png", Astro.site);
 ---
 
 <Layout title={home.title} description={home.description} image={ogImage.toString()} url={ogUrl.toString()}>
