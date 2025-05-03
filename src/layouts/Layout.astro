@@ -1,8 +1,8 @@
 ---
 import { ClientRouter } from "astro:transitions";
-import ThemeSwitcher from "../components/ThemeSwitcher.astro";
 
 import "../styles/global.css";
+import Posthog from "../components/Posthog.astro";
 
 interface Props {
   title: string;
@@ -45,5 +45,7 @@ const { url = Astro.url, title, image, description } = Astro.props;
 
   <body class="bg-white dark:bg-black">
     <slot />
+
+    <Posthog />
   </body>
 </html>
